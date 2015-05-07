@@ -1,0 +1,14 @@
+@import "normalize";
+@import "variables";
+@import "mixins";
+@import "base";
+@import "layout";
+@import "compass";
+@import "susy";
+@import "nav";
+
+body {
+    background-color: #ece8e5;
+    font-size: 16px;
+}
+
