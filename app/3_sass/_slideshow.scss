@@ -1,0 +1,121 @@
+@import "flexslider";
+
+.flexslider {
+  @include container;
+  @include clearfix;
+  background-color: $black;
+  min-height: 20rem;
+  max-height: 20em;
+  margin: 0;
+  border: 0;
+  @include susy-breakpoint(60em) {
+    @include span(4 of 6);
+    max-height: 40em;
+  }
+
+  .slides {
+    max-width: 100%;
+    max-height: 100%;
+    > li {
+      max-height: 100%;
+      width: 100%;
+      img {
+          max-height: auto;
+          max-width: 100%;
+      }
+      div {
+        display: none;
+        @include susy-breakpoint(60em) {
+          display: block;
+        }
+        @include clearfix;
+        width: 100%;
+        position: absolute;
+        top: 10em;
+        hgroup {
+          @include clearfix;
+          @include container(58em);
+          nav {
+            float: left;
+            background: rgba(0,0,0,0.5);
+            padding: 1em 1em 0 1em;
+            @include border-radius(4px);
+            h2 {
+              font-size: 2.81em;
+              text-transform: uppercase;
+              color: $white;
+              margin: 0;
+            }
+            h3 {
+              font-size: 0.875em;
+              color: $white;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .flex-control-nav {
+    display: none;
+    @include susy-breakpoint(60em) {
+      display: block;
+    }
+    bottom: 45px;
+    z-index: 10;
+    &.flex-control-paging {
+      li {
+        a {
+          width: 8px;
+          height: 8px;
+          background: transparent;
+          cursor: pointer;
+          text-indent: -9999px;
+          @include border-radius(4px);
+          @include box-shadow(0);
+          border: 1px solid $white;
+          &.flex-active {
+            background: $white;
+          }
+          &:hover {
+            background: $white;
+          }
+        }
+      }
+    }
+  }
+
+  .flex-direction-nav {
+    display: none;
+    @include susy-breakpoint(60em) {
+      display: block;
+    }
+    a  { 
+      width: auto;
+      height: auto;
+      background-color: rgba(255,255,255,0.3);
+      padding: 1em 1.8em;
+      color: $white;
+      text-shadow: none;
+      -webkit-transition: all .3s ease;
+      -moz-transition: all .3s ease;
+      transition: all .3s ease;
+      &:before {
+        font-family: "FontAwesome";
+        font-size: 3em; 
+        content: '\f104';
+      }
+      &.flex-next:before {
+        content: '\f105';
+      }
+    }
+  }
+  &:hover {
+    .flex-prev { opacity: 0.7; left: 0px; }
+    .flex-next { opacity: 0.7; right: 0px; }
+  }
+}
+
+// left : \f053
+// right : \f054

@@ -1,4 +1,5 @@
 @import "normalize";
+@import "font-awesome/font-awesome";
 @import "variables";
 @import "mixins";
 @import "base";
@@ -6,9 +7,107 @@
 @import "compass";
 @import "susy";
 @import "nav";
+@import "slideshow";
 
-body {
-    background-color: #ece8e5;
-    font-size: 16px;
+section.banner {
+	@include background($black url('../images/bannerMountain.jpg') no-repeat center center);
+	@include background-size(cover);
+	min-height: 20rem;
+	@include susy-breakpoint(960px) {
+		min-height: 31.25rem;
+	}
+}
+.separator {
+	min-height: 40px;
+	background-color: $grey;
+	border-top: 3px solid $green;
 }
 
+section.presentation {
+	@include container;
+	@include clearfix;
+	h1 {
+		font-size: 1.3rem;
+		color: $grey;
+		text-align: center;
+	}
+}
+
+article.agenda {
+	@include container;
+	@include clearfix;
+	background-color: $green;
+	margin: 0;
+	padding: 0 0 3rem 0;
+	h1 {
+		margin: 0;
+		padding: 3rem 0;
+		text-align: center;
+		color: $white;
+	}
+	h2 {
+		margin: 0;
+		padding: 2rem 0 1rem 1rem;
+		border-top: 1px solid $grey;
+	}
+	p {
+		padding: 0 1rem 1rem 1rem;
+		color: $white;
+	}
+	@include susy-breakpoint(960px) {
+		@include span(2 of 6 last);
+	}
+}
+
+section.contact {
+	@include container;
+	@include clearfix;
+	@include susy-breakpoint(960px) {
+		min-width: 100%;
+	}
+	.banner {
+		@include background($black url('../images/appleStarBlack.jpg') no-repeat center center);
+		@include background-size(cover);
+		min-height: 17.5rem;
+		@include susy-breakpoint(960px) {
+			min-height: 35rem;
+		}
+		h1 {
+			margin: 0;
+			padding: 1rem 0;
+			color: $white;
+			text-align: center;
+		}
+	}
+	.coordonnees, .horaires {
+		@include squish(1 of 6);
+		@include span(4 of 6);
+		text-align: center;
+		padding: 2rem 0;
+		@include susy-breakpoint(960px) {
+			@include squish(0);
+			@include span(5 of 10);
+			margin-right: 0;
+		}
+		p {
+			span {
+				line-height: 3rem;
+				color: $green;
+				font-weight: 700;
+			}
+		}
+	}
+	.coordonnees {
+		border-bottom: 2px solid $green;
+		@include susy-breakpoint(960px) {
+			border-bottom: 0;
+			border-right: 2px solid $green;
+		}
+	}
+	.horaires {
+		@include susy-breakpoint(960px) {
+			@include squish(0);
+			@include span(5 of 10 last);
+		}
+	}
+}
