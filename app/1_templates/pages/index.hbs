@@ -1,33 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	
-</body>
-</html>
 {{>system/header}}
 {{>system/contentHeader}}
 
 <section class="presentation">
-	<h1>Présentation de différentes photos</h1>
+	<div class="container">
+		<h1>Présentation de différentes photos</h1>
+
+		{{>system/slideshow}}
+
+		<article class="agenda">
+			<h2>Agenda</h1>
+			<div>
+				<h3>23 avril 2015</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas similique, provident. Consectetur, commodi beatae quidem.</p>
+			</div>
+			<div>
+				<h3>26 mai 2015</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus expedita soluta quasi.</p>
+			</div>
+		</article>
+	</div>
+
 </section>
 
-{{>system/slideshow}}
 
-<article class="agenda">
-	<h1>Agenda</h1>
-	<div>
-		<h2>23 avril 2015</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas similique, provident. Consectetur, commodi beatae quidem.</p>
-	</div>
-	<div>
-		<h2>26 mai 2015</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus expedita soluta quasi.</p>
-	</div>
-</article>
 
 <section class="contact">
 	<div class="banner">

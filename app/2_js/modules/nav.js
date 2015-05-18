@@ -1,42 +1,37 @@
-(function($){
+(function($) {
 
-  $(document).ready(function(){
+    $(document).ready(function() {
 
-    var w = $(window).width();
+        $('#main-nav > ul').prepend('<li class=\"mobile\"><a href=\"#\"><span>&nbsp; <i class=\"burger\">&#9776;</i></span></a></li>');
 
-      if(w < 960) {
-        $('.main-nav-mobile').on('click', showMenu);
-        $('.menu-close').on('click', showMenu);
-        $('.nav-sub-menu1').on('click', showSubMenu1);
-        $('.nav-sub-menu2').on('click', showSubMenu2);
-        $('.nav-sub-menu3').on('click', showSubMenu3);
-      }
+        $('#main-nav > ul > li > a').click(function(e) {
+            $('#main-nav li').removeClass('active');
+            $(this).closest('li').addClass('active');
+            var checkElement = $(this).next();
+
+            if ((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+                $(this).closest('li').removeClass('active');
+                checkElement.slideUp('normal');
+            }
+
+            if ((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+                $('#main-nav ul ul:visible').slideUp('normal');
+                checkElement.slideDown('normal');
+            }
+
+            if ($(this).parent().hasClass('mobile')) {
+                e.preventDefault();
+                $('#main-nav').toggleClass('expand');
+            }
+
+            if ($(this).closest('li').find('ul').children().length == 0) {
+                return true;
+            } else {
+                return false;
+            }
+
+        });
 
     });
-
-  function showMenu() {
-    $('.main-nav-menu').slideToggle();
-    $('.sub-menu1').slideUp();
-    $('.sub-menu2').slideUp();
-    $('.sub-menu3').slideUp();
-  }
-
-  function showSubMenu1() {
-    $('.sub-menu1').slideToggle();
-    $('.sub-menu2').slideUp();
-    $('.sub-menu3').slideUp();
-  }
-
-  function showSubMenu2() {
-    $('.sub-menu1').slideUp();
-    $('.sub-menu2').slideToggle();
-    $('.sub-menu3').slideUp();
-  }
-
-  function showSubMenu3() {
-    $('.sub-menu1').slideUp();
-    $('.sub-menu2').slideUp();
-    $('.sub-menu3').slideToggle();
-  }
 
 })(jQuery);

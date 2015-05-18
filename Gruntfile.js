@@ -75,7 +75,7 @@ module.exports = function(grunt) {
       static: {
         // the server root directory
         root: 'generated/static',
-        port: 8081,
+        port: 5000,
         // port: function() { return 8282; }
         host: "127.0.0.1",
         cache: 60,

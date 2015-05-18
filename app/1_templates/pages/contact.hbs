@@ -1,0 +1,33 @@
+{{>system/header}}
+{{>system/contentHeader}}
+
+<section class="formulaire">
+	<div class="container">
+		<form id="contactForm" action="#" method="post">
+			<h1 class="heading"><span>Contact us using this form</span></h1>
+			<p> Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.</p>
+			<fieldset>
+				<div>
+					<label>Name</label>
+					<input name="name" id="name" type="text" class="form-poshytip" title="Enter your full name">
+				</div>
+				<div>
+					<label>Email</label>
+					<input name="email" id="email" type="text" class="form-poshytip" title="Enter your email address">
+				</div>
+				<div>
+					<textarea name="comments" id="comments" rows="5" cols="20" class="form-poshytip" title="Enter your comments"></textarea>
+				</div>
+				<!-- send mail configuration -->
+				<input type="hidden" value="email@yourserver.com" name="to" id="to">
+				<input type="hidden" value="Enter the subject here" name="subject" id="subject">
+				<input type="hidden" value="send-mail.php" name="sendMailUrl" id="sendMailUrl">
+				<!-- ENDS send mail configuration -->
+				<p><input type="button" value="Send" name="submit" id="submit"> <span id="error" class="warning" style="display: none;">Message</span></p>
+			</fieldset>
+		</form>
+	</div>
+</section>
+
+{{>system/contentFooter}}
+{{>system/footer}}

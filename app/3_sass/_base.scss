@@ -5,10 +5,20 @@ html {
   box-sizing: inherit;
 }
 
+body {
+	background-color: $lightgrey;
+}
+
 a {
 	color: $white;
 	text-decoration: none;
 	&:active, &:visited {
 		color: $white;
 	}
+}
+
+.container {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
 }

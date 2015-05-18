@@ -1,106 +1,130 @@
-.main-nav {
-	@include clearfix;
-	background-color: $grey;
-	border-bottom: 3px solid $green;
-	h1 {
-		margin: 0;
-		font-size: 1.5rem;
-		@include span(1 of 3);
-	}
-	.logo {
-		display: block;
-		float: left;
-		padding: 1em 0 1em 1em;
-		width: 50%;
-		@include susy-breakpoint(60em) {
-			width: 10em;
-		}
-	}
-	.main-nav-mobile {
-		float: right;
-		margin: 1.4em 1.6em 0 0;
-		@include susy-breakpoint(60em) {
-			display: none;
-		}
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500);
 
-		.fa-bars {
-			color: $white;
-			cursor: pointer;
-		}
-	}
-	.main-nav-menu {
-		display: none;
-		clear: both;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		@include clearfix;
-		@include susy-breakpoint(60em) {
-			clear: none;
-			display: block;
-			float: right;
-			line-height: 3em;
-			padding-top: 13px;
-		}
+#main-nav,
+#main-nav ul,
+#main-nav li,
+#main-nav a {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  line-height: 1;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
 
-		> li {
-			border-top: 1px solid $green;
-			@include susy-breakpoint(60em) {
-				float: left;
-				border-top: none;
-			}
+#main-nav {
+  width: 100%;
+  background: #fff;
 
-			a {
-				text-align: center;
-				display: block;
-				text-decoration: none;
-				color: $white;
-				font-size: 0.875em;
-				/* @include primary-font($pf, $pfBold); */
-				text-transform: uppercase;
-				padding: 0.8em 1.25em;
-				@include susy-breakpoint(60em) {
-					padding: 0 1.25em;
-					&:hover {
-						color: $white;
-					}
-					&.active {
-						color: $white;
-					}
-				}
-			}
-			&:last-child a {
-				@include susy-breakpoint(60em) {
-					padding: 0 2.5em 0 1.25em;
-				}
-			}
-		}
-		.sub-menu1, .sub-menu2, .sub-menu3 {
-			display: none;
-			clear: both;
-			list-style: none;
-			padding: 0;
-			margin: 0;
-			@include clearfix;
-			@include susy-breakpoint(60em) {
+  >ul {
+    background: $grey;
 
-			}
-			li {
-				border-bottom: 1px dotted $green;
-				&:first-child {
-					border-top: 1px dotted $green;
-				}
-				&:last-child {
-					border-bottom: 0;
-				}
-				a {
-					font-size: 0.75rem;
-					color: $lightgrey;
-					@include susy-breakpoint(60em){
-						
-					}
-				}
-			}
-		}
-	}
+    &:after {
+      clear: both;
+      content: '';
+      display: table; }
+
+    >li {
+      float: left;
+      margin-right: 15px;
+
+      >a {
+        display: block;
+        margin: 0 0 2px 0;
+        font-size: 12px;
+        color: $white;
+
+        >span {
+          display: block;
+          padding: 3px 5px;
+          font-weight: 500; }
+      }
+    }
+
+    >li.active>a{
+      color: $green; }
+
+    >li.mobile {
+      display: none;
+      min-height: 32px; }
+
+    >li:last-child {
+      ul {
+        left: auto;
+        right: 0; }
+    }
+  }
+
+  a {
+    line-height: 1.5; }
+}
+
+/* Sub menu */
+#main-nav ul ul {
+  display: none;
+  position: absolute;
+  top: 29px;
+  left: 0;
+  background: $lightgrey;
+  border: 1px solid $grey;
+  padding: 10px;
+  margin: 0;
+  width: 150px;
+  z-index: 1;
+  li {
+    padding: 3px 0;
+    margin: 0; }
+
+  a {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+
+    &:hover {
+      color: $green; }
+  }
+}
+
+
+@media all and (max-width: 480px) {
+  #main-nav.expand ul {
+    max-height: 900px;
+    margin: 0;
+  }
+
+  #main-nav > ul {
+    max-height: 32px;
+    overflow: hidden;
+    -webkit-transition: max-height 0.5s;
+    transition: max-height 0.5s;
+
+    > li {
+      display: block;
+      float: none;
+      margin-right: 0;
+      >a {
+        text-align: center; }
+    }
+
+    >li.mobile {
+      display: block;
+
+      i {
+        float:right;
+        font-style: normal; }
+    }
+
+  }
+
+  #main-nav ul ul {
+    position: relative;
+    top: 0;
+    width: 100%;
+    >li>a {
+      text-align: center;
+    }
+  }
 }

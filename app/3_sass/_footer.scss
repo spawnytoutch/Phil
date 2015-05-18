@@ -1,0 +1,180 @@
+.footer-distributed{
+	background-color: $grey;
+	width: 100%;
+	height: 200px;
+	padding: 20px 0;
+	margin-top: 80px;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	text-align: left;
+
+	.footer-left, .footer-center, .footer-right{
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.footer-left {
+		@include span(4 of 10);
+
+		h3 {
+			margin: 0;
+			font-family: 'Cookie', cursive;
+			font-size: 24px;
+			font-weight: bold;
+			color: $green;
+		}
+
+		.footer-links {
+			margin: 30px 0 30px 0;
+			padding: 0;
+			color: $white;
+
+			a {
+				display: inline-block;
+				text-decoration: none;
+				line-height: 1.8;
+				color: inherit;
+				cursor: pointer;
+			}
+		}
+
+		.footer-company-name {
+			margin: 0;
+			font-size: 14px;
+			font-weight: normal;
+			color: $lightgrey;
+		}
+	}
+
+	.footer-center {
+		@include span(3 of 10);
+
+		i {
+			background-color: $green;
+			width: 25px;
+			height: 25px;
+			margin: 13px 10px;
+			border-radius: 4px;
+			font-size: 16px;
+			color: $lightgrey;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 26px;
+
+			&.fa-envelope {
+				font-size: 14px;
+				line-height: 23px;
+			}
+		}
+
+		p {
+			display: inline-block;
+			margin: 0;
+			vertical-align: middle;
+			color: $white;
+
+			span {
+				display: block;
+				font-size: 12px;
+				font-weight: 400;
+				line-height: 2;
+			}
+
+			a {
+				color: $green;
+			}
+		}
+	}
+
+	.footer-right {
+		@include span(3 of 10 omega);
+
+		.footer-company-about {
+			margin: 0;
+			padding: 5px 0 5px 0;
+			font-size: 12px;
+			font-weight: 300;
+			color: $lightgrey;
+			line-height: 24px;
+
+			span {
+				font-size: 14px;
+				font-weight: 500;
+				color: $green;
+			}
+		}
+
+		.footer-icons {
+			margin-top: 31px;
+
+			a {
+				display: inline-block;
+				background-color: $green;
+				width: 25px;
+				height: 25px;
+				margin-right: 5px;
+				margin-bottom: 5px;
+				border-radius: 4px;
+				font-size: 16px;
+				color: $white;
+				text-align: center;
+				line-height: 26px;
+			}
+		}
+	}
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		margin-top: 0;
+		padding: 20px 10px;
+		height: 600px;
+
+		.footer-left, .footer-center, .footer-right{
+			display: block;
+			width: 100%;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		.footer-left {
+			@include container;
+			border-bottom: 1px $green solid;
+			padding-bottom: 20px;
+
+			.footer-links {
+				margin: 10px 0;
+			}
+		}
+
+		.footer-center {
+			border-bottom: 1px $green solid;
+			padding-bottom: 20px;
+
+			div {
+				@include container;
+
+				i {
+					margin-left: 0;
+				}
+
+				p {
+					@include span(1 of 1);
+				}
+			}
+		}
+
+		.footer-right {
+
+			.footer-icons {
+				margin-top: 10px;
+			}
+
+		}
+	}
+
+}
