@@ -1,0 +1,142 @@
+.panoramaSlider {
+	background: #000000;
+	@extend %homeSlider;
+	.wideContainer {
+		position: relative;
+  	overflow: hidden;
+  	// width: 100%;
+  	// max-width: 100%;
+  	height: 500px;
+  	.contenu {
+			position: absolute;
+			z-index: 20;
+			color: $white;
+			margin: 2em 0 0 5em;
+			h1 {
+					margin: 0;
+					padding: 1.5rem 0 1.5rem 0.625rem;
+					@include primary-font($hNMedium);
+					font-size: 2rem;
+				}
+				.slider-menu {
+					ul {
+						margin: 0;
+						padding: 0;
+						list-style: none;
+					}
+					li {
+						padding: 0 0.625rem; 
+						@include primary-font($hNMedium);
+						font-size: 1.5rem;
+						&.active {
+							background: none;
+							color: $pink;
+						}
+					}
+				}
+		}
+		>div:nth-child(2){
+			background: url('/voo2015/assets/images/slider/panoramaSlide1.jpg') no-repeat 0 0;
+			// @include background-size(cover);
+		}
+		>div:nth-child(3){
+			background: url('/voo2015/assets/images/slider/panoramaSlide2.jpg') no-repeat 0 0;
+			// @include background-size(cover);
+		}
+		>div:nth-child(4){
+			background: url('/voo2015/assets/images/slider/panoramaSlide3.jpg') no-repeat 0 0;
+			// @include background-size(cover);
+		}
+		>div:nth-child(5){
+			background: url('/voo2015/assets/images/slider/panoramaSlide4.jpg') no-repeat 0 0;
+			// @include background-size(cover);
+		}
+		>div {
+			  position: absolute;
+			  z-index: 10;
+			  width: 100%;
+			  right: -2000px;
+				&.current {
+					right: 0px;
+					z-index: 5;
+				}
+				.innerContainer {
+				position: relative;
+				min-height: 31.25rem;
+				>div {
+					position: absolute;
+					top: 24rem;
+					left: 0.625rem;
+					margin: 0;
+					padding: 0;
+					ul {
+						margin: 0;
+						padding: 0;
+						list-style: none;
+						li {
+							display: inline-block;
+							margin: 0;
+							padding: 0;
+							img {
+								padding-right: 1.25rem;
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@include susy-breakpoint($breakpoint1) {
+		.wideContainer {
+			>div {
+				.innerContainer {
+					h1 {
+						padding: 5.375rem 0.625rem 2.5rem 0.625rem;
+						font-size: 2.375rem;
+					}
+					.slider-menu {
+						li {
+							span {
+								padding: 0 0.625rem;
+								font-size: 1.75rem;
+							}
+						}
+					}
+					>div {
+						top: 25rem;
+						left: 0.625rem;
+					}
+				}
+			}
+		}
+	}
+	@include susy-breakpoint($breakpoint2) {
+		.wideContainer {
+			>div {
+				.innerContainer {
+					>div {
+						left: 24rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.homeSlider {
+  margin-bottom: 0.2em;
+  @include generateLayout("slider", "classic");
+  .sliderContainer {
+    >div {
+      background: #fff;
+    }
+  }
+  nav.innerContainer {
+    clear: both;
+    margin-top: -1em;
+    div {
+      background: #fff;
+    }
+  }
+}
