@@ -362,6 +362,64 @@ section.motPresident {
 	}
 }
 
+section.activites {
+	position: relative;
+	margin: 0;
+	padding: 0 0 15px 0;
+	border: 0;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: $black;
+	h1 {
+		margin-bottom: 25px;
+		text-align: center;
+		font-weight: 300;
+		background: url(../images/lineTitle.jpg) repeat-x center center;
+		span {
+			background-color: $lightgrey;
+			padding: 0 20px;
+			margin-left: 0;
+		}
+	}
+	p {
+
+	}
+	.container>div {
+		position: relative;
+		height: 750px;
+		>article {
+			background-color: $white;
+			display: block;
+			@include gallery(1 of 1);
+			height: 350px;
+			margin-bottom: 35px;
+			border-radius: 5px;
+			@include susy-breakpoint(960px) {
+				@include gallery(1 of 3);
+			}
+			h3 {
+				margin: 0 15px;
+				padding: 15px 0 10px 0;
+				text-align: center;
+				color: $grey;
+				border-bottom: 1px solid $lightgrey;
+			}
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+			p {
+				padding: 0 20px 0 20px;
+			}
+			a {
+				color: $green;
+				padding: 0 20px 0 20px;
+			}
+		}
+	}
+}
+
 section.formulaire {
 	position: relative;
 	margin: 0;
