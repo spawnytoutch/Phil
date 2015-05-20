@@ -387,16 +387,24 @@ section.activites {
 	}
 	.container>div {
 		position: relative;
-		height: 750px;
+		height: 3000px;
+		margin: 0 20px;
+		@include susy-breakpoint(960px) {
+			height: 750px;
+			margin: 0;
+		}
 		>article {
 			background-color: $white;
 			display: block;
-			@include gallery(1 of 1);
-			height: 350px;
+			@include clearfix;
+			@include span(full);
+			@include container;
+			height: 460px;
 			margin-bottom: 35px;
 			border-radius: 5px;
 			@include susy-breakpoint(960px) {
 				@include gallery(1 of 3);
+				height: 350px;
 			}
 			h3 {
 				margin: 0 15px;
