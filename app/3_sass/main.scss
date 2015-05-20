@@ -181,7 +181,6 @@ section.contact {
 		border-bottom: 2px solid $green;
 		@include susy-breakpoint(960px) {
 			border-bottom: 0;
-			
 		}
 	}
 	.horaires {
@@ -386,6 +385,76 @@ section.formulaire {
 			> p {
 				text-align: left;
 			}
+		}
+	}
+}
+
+section.login {
+	margin:0 auto;
+	max-width:500px;
+	.login-header {
+		font-family: 'Ubuntu', sans-serif;
+		text-align: center;
+		color: $white;
+		font-size: 300%;
+		@include susy-breakpoint(530px) {
+			font-size: 200%;
+		}
+		h1 {
+			margin:0; padding:0;
+			text-shadow: 0px 5px 15px $grey;
+		}
+	}
+	.login-form {
+		width: 80%;
+		box-sizing:border-box;
+		border:2px solid $lightgrey;
+		background: $green;
+		padding-top:15px;
+		margin:50px auto;
+		border-radius: 10px;
+		box-shadow: 0px 0px 10px $grey;
+		text-align:center;
+		overflow: hidden;
+		@include susy-breakpoint(530px) {
+			width: 100%;
+		}
+		h3 {
+			margin: 0;
+			text-align: center;
+			color: $white;
+			@include susy-breakpoint(530px) {
+				margin-left: 40px;
+				text-align: left;
+			}
+		}
+		input[type="text"], input[type="password"] {
+			width: 80%;
+			max-width: 400px;
+			height: 30px;
+			font-family: 'Ubuntu', sans-serif;
+			margin:10px 0;
+			border-radius:5px;
+			border:2px solid #f2f2f2;
+			outline:none;
+			padding-left:10px;
+			@include susy-breakpoint(530px) {
+				width: 100%;
+				text-align: left;
+			}
+		}
+		input[type="button"] {
+			height:30px;
+			width:100px;
+			background:#fff;
+			margin-top: 25px;
+			margin-bottom: 25px;
+			border:1px solid #f2f2f2;
+			border-radius:20px;
+			color: $grey;
+			text-transform: uppercase;
+			font-family: 'Ubuntu', sans-serif;
+			cursor: pointer;
 		}
 	}
 }
