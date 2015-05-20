@@ -85,6 +85,14 @@ section.presentation {
 			background: url('/images/4.jpg') no-repeat 0 0;
 			@include background-size(cover);
 		}
+		>div:nth-child(5){
+			background: url('/images/5.jpg') no-repeat 0 0;
+			@include background-size(cover);
+		}
+		>div:nth-child(6){
+			background: url('/images/6.jpg') no-repeat 0 0;
+			@include background-size(cover);
+		}
 		>div {
 			position: absolute;
 			z-index: 10;
@@ -94,6 +102,44 @@ section.presentation {
 			&.current {
 				right: 0px;
 				z-index: 5;
+			}
+			>div {
+				background-color: $green;
+				width: 85%;
+				height: 90px;
+				padding-left: 10px;
+				position: absolute;
+				left: 25px;
+				bottom: 25px;
+				box-shadow: 2px 2px 2px $black;
+				@include susy-breakpoint(640px) {
+					height: 75px;
+				}
+				h3 {
+					margin: 0;
+					padding: 5px 0 0 0;
+					font-family: 'Ubuntu', sans-serif;
+					font-weight: 500;
+					color: $black;
+				}
+				p {
+					margin: 0;
+					padding: 0;
+					font-family: 'Ubuntu', sans-serif;
+					font-weight: 400;
+					color: $grey;
+					a {
+						display: block;
+						margin: 0;
+						padding: 0;
+						font-family: 'Ubuntu', sans-serif;
+						font-weight: 300;
+						color: $white;
+						text-align: center;
+						cursor: pointer;
+						text-shadow: 1px 1px 1px $grey;  
+					}
+				}
 			}
 		}
 		@include susy-breakpoint(960px) {
@@ -110,6 +156,8 @@ section.presentation {
 		background-color: $green;
 		margin: 15px 0 0 0;
 		padding: 0 0 3rem 0;
+		box-shadow: 2px 2px 2px $grey;
+		border-bottom: 2px solid $grey;
 		h2 {
 			margin: 0;
 			padding: 3rem 0;
