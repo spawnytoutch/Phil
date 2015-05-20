@@ -402,20 +402,25 @@ section.activites {
 			height: 460px;
 			margin-bottom: 35px;
 			border-radius: 5px;
+			box-shadow: 1px 1px 1px $grey;
 			@include susy-breakpoint(960px) {
 				@include gallery(1 of 3);
 				height: 350px;
 			}
 			h3 {
-				margin: 0 15px;
-				padding: 15px 0 10px 0;
-				text-align: center;
-				color: $grey;
-				border-bottom: 1px solid $lightgrey;
+				background-color: $green;
+				padding: 15px 0 15px 20px;
+				margin: 0;
+				text-align: left;
+				color: $white;
+				text-shadow: 1px 1px 1px $grey;
 			}
 			img {
+				display: block;
 				max-width: 100%;
 				height: auto;
+				margin: 0;
+				padding: 0;
 			}
 			p {
 				padding: 0 20px 0 20px;
