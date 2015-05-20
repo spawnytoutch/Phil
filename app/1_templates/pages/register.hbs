@@ -1,0 +1,48 @@
+{{>system/header}}
+{{>system/contentHeader}}
+
+<section class="formulaire">
+	<div class="container">
+		<form id="registerForm" action="#" method="post">
+			<h1 class="heading"><span>Enregistrez-vous</span></h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi asperiores quisquam vitae itaque placeat ipsa.
+			</p>
+			<fieldset>
+				<div>
+					<label>Prénom</label>
+					<input name="firstname" id="firstname" type="text" title="Entrez votre prénom">
+				</div>
+				<div>
+					<label>Nom</label>
+					<input name="lastname" id="lastname" type="text" title="Entrez votre nom">
+				</div>
+				<div>
+					<label>Email</label>
+					<input name="email" id="email" type="text" title="Entrez votre adresse email">
+				</div>
+				<div>
+					<label>Login</label>
+					<input name="login" id="login" type="text" title="Entrez votre login">
+				</div>
+				<div>
+					<label>Mot de passe</label>
+					<input name="password" id="password" type="text" title="Entrez votre password">
+				</div>
+				<div>
+					<label>Confirmation du mot de passe</label>
+					<input name="password-confirm" id="password-confirm" type="text" title="Confirmez votre password">
+				</div>
+				<!-- send mail configuration -->
+				<input type="hidden" value="email@yourserver.com" name="to" id="to">
+				<input type="hidden" value="Enter the subject here" name="subject" id="subject">
+				<input type="hidden" value="send-mail.php" name="sendMailUrl" id="sendMailUrl">
+				<!-- ENDS send mail configuration -->
+				<p><input type="button" value="Send" name="submit" id="submit"> <span id="error" class="warning" style="display: none;">Message</span></p>
+			</fieldset>
+		</form>
+	</div>
+</section>
+
+{{>system/contentFooter}}
+{{>system/footer}}
