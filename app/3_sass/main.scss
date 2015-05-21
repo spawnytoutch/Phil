@@ -387,10 +387,9 @@ section.activites {
 	}
 	.container>div {
 		position: relative;
-		height: 3000px;
+		@include clearfix;
 		margin: 0 20px;
 		@include susy-breakpoint(960px) {
-			height: 750px;
 			margin: 0;
 		}
 		>article {
@@ -576,4 +575,62 @@ section.login {
 			cursor: pointer;
 		}
 	}
+}
+
+section.titleArticles {
+	.container {
+		@include clearfix;
+		h1 {
+			margin-bottom: 25px;
+			text-align: center;
+			font-weight: 300;
+			background: url(../images/lineTitle.jpg) repeat-x center center;
+			span {
+				background-color: $lightgrey;
+				padding: 0 20px;
+				margin-left: 0;
+			}
+		}
+		>div {
+			@include clearfix;
+			@include span(full);
+			@include container;
+			article {
+				@include clearfix;
+				@include span(full);
+				@include container;
+				background-color: $white;
+				border-radius: 5px;
+				margin-bottom: 20px;
+				.entete {
+					background: $grey;
+					width: 100%;
+					line-height: 1.5;
+					padding: 5px 0 0 10px;
+					font-family: 'Ubuntu', sans-serif;
+					font-size: 1.5rem;
+					color: $white;
+				}
+				.content {
+					a {
+						color: $green;
+					}
+				}
+			}
+		}
+		@include susy-breakpoint(960px) {
+			h1 {
+				text-align: left;
+				padding-left: 25px;
+
+			}
+			>div {
+				article {
+					@include gallery(1 of 2);
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
 }
