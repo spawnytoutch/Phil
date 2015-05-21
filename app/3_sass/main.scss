@@ -577,7 +577,7 @@ section.login {
 	}
 }
 
-section.titleArticles {
+section.article {
 	.container {
 		@include clearfix;
 		h1 {
@@ -591,46 +591,64 @@ section.titleArticles {
 				margin-left: 0;
 			}
 		}
-		>div {
+		article {
 			@include clearfix;
-			@include span(full);
-			@include container;
-			article {
-				@include clearfix;
-				@include span(full);
-				@include container;
-				background-color: $white;
-				border-radius: 5px;
-				margin-bottom: 20px;
-				.entete {
-					background: $grey;
-					width: 100%;
-					line-height: 1.5;
-					padding: 5px 0 0 10px;
-					font-family: 'Ubuntu', sans-serif;
-					font-size: 1.5rem;
-					color: $white;
+			.entete {
+				position: relative;
+				height: 30px;
+				background-color: $grey;
+				color: $white;
+				.number {
+					position: absolute;
+					top: 5px;
+					left: 10px;
 				}
-				.content {
-					a {
-						color: $green;
+				.year {
+					position: absolute;
+					top: 5px;
+					left: 40px;
+				}
+				@include susy-breakpoint(960px) {
+					@include background(url(../images/date.png) no-repeat 0 0);
+					position: relative;
+					@include span(1 of 5);
+					height: 100px;
+					.number {
+						position: absolute;
+						top: 18px;
+						left: 40px;
+						font-weight: 500;
+						color: $white;
+					}
+					.year {
+						position: absolute;
+						top: 40px;
+						left: 16px;
+						font-weight: 500;
+						color: $white;
 					}
 				}
 			}
-		}
-		@include susy-breakpoint(960px) {
-			h1 {
-				text-align: left;
-				padding-left: 25px;
-
+			h2 {
+				padding: 0 20px;
 			}
+			.content {
+				margin-top: 50px;
+				padding: 0 20px;
+			}
+		}
+		>div {
 			>div {
-				article {
-					@include gallery(1 of 2);
-					margin-right: 0;
+				background-color: $green;
+				@include clearfix;
+				@include squish(1 of 5,1 of 5);
+				@include span(3 of 5);
+				height: 200px;
+				margin-bottom: 25px;
+				@include susy-breakpoint(960px) {
+					@include gallery(1 of 4);
 				}
 			}
 		}
 	}
-
 }
