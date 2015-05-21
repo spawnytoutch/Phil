@@ -611,7 +611,7 @@ section.article {
 				@include susy-breakpoint(960px) {
 					@include background(url(../images/date.png) no-repeat 0 0);
 					position: relative;
-					@include span(1 of 5);
+					@include span(1 of 8);
 					height: 100px;
 					.number {
 						position: absolute;
@@ -631,10 +631,16 @@ section.article {
 			}
 			h2 {
 				padding: 0 20px;
+				@include susy-breakpoint(960px) {
+					padding: 0;
+				}
 			}
 			.content {
 				margin-top: 50px;
 				padding: 0 20px;
+				@include susy-breakpoint(960px) {
+					padding: 0;
+				}
 			}
 		}
 		>div {
